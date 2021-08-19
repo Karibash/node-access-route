@@ -1,34 +1,41 @@
-# typescript-library-template
+# node-access-route
 
-This is a template repository for developing libraries for Browser/Node.js with TypeScript.
+Parse the http header to determine the client's IP address.
 
-## How to publish to npm
+## 👏 Getting Started
 
-Rewrite the following items in package.json accordingly.
+The basic usage is as follows:
 
-* name
-* description
-* keywords
-* repository
-* author
-* bugs
-* homepage
+```typescript
+import express from 'express';
+import accessRoute from '@karibash/node-access-route';
 
-Use the following command to confirm that TypeScript to JavaScript compiles successfully.
+const app = express();
+const port = 3000;
 
-```bash
-$ npm run build
+app.get('/', (request, response) => {
+  response.json(accessRoute(request));
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://127.0.0.1:${port}`);
+});
 ```
 
-Tag the commit with the following command before publishing to npm.
+## 🚀 Installation
 
-```bash
-$ git tag -a v1.0.0
-$ git push origin tags/v1.0.0
+```
+$ npm install @karibash/node-access-route
 ```
 
-Finally, use the following command to publish the tagged commit to NPM.
+## 🤝 Contributing
 
-```bash
-$ npm run publish
-```
+Contributions, issues and feature requests are welcome.
+
+Feel free to check [issues page](https://github.com/Karibash/node-access-route/issues) if you want to contribute.
+
+## 📝 License
+
+Copyright © 2020 [@Karibash](https://twitter.com/karibash).
+
+This project is [```MIT```](https://github.com/Karibash/node-access-route/blob/master/LICENSE) licensed.
