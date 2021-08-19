@@ -1,5 +1,13 @@
-import { CoreClass } from 'typescript-library-template';
-import { ModuleClass } from 'typescript-library-template/module';
+import express from 'express';
+import accessRoute from '@karibash/node-access-route';
 
-new CoreClass().print();
-new ModuleClass().print();
+const app = express();
+const port = 3000;
+
+app.get('/', (request, response) => {
+  response.json(accessRoute(request));
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://127.0.0.1:${port}`);
+});
