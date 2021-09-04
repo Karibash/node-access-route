@@ -1,6 +1,6 @@
 {
   "name": "@karibash/node-access-route",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Parse the http header to determine the client's IP address.",
   "private": true,
   "keywords": [
